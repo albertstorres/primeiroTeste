@@ -37,4 +37,19 @@ public class CalculadoraTest {
         double resultadopObtido = calculadora.subtract(num1, num2);
         assertEquals(resultadoEsperado, resultadopObtido, 0.001);
     }
+
+    @Test
+    public void validaSeDoisVezesDoisEQuatro () {
+        assertEquals(4, calculadora.multiply(2,2), 0.001);
+    }
+
+    @Test
+    public void validaSeQualquerNumeroVezesZeroEZero() {
+        double num1 = 0;
+        double num2 = 3412356;
+        double valorEsperado = 0;
+        double delta = 0.001;
+        double valorObtido = calculadora.multiply(num1, num2);
+        assertEquals(valorEsperado, valorObtido, delta);
+    }
 }
