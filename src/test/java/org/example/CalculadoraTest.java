@@ -40,7 +40,12 @@ public class CalculadoraTest {
 
     @Test
     public void validaSeDoisVezesDoisEQuatro () {
-        assertEquals(4, calculadora.multiply(2,2), 0.001);
+        double num1 = 2;
+        double num2 = 2;
+        double resultadoEsperado = 4;
+        double delta = 0.001;
+        double resultadoObtido = calculadora.multiply(num1, num2);
+        assertEquals(resultadoEsperado, resultadoObtido, delta);
     }
 
     @Test
@@ -51,5 +56,14 @@ public class CalculadoraTest {
         double delta = 0.001;
         double valorObtido = calculadora.multiply(num1, num2);
         assertEquals(valorEsperado, valorObtido, delta);
+    }
+    @Test
+    public void validarDivisaoPorZero() {
+        double num1 = 1;
+        double num2 = 0;
+        double resultadoEsperado = 0;
+        double delta = 0.001;
+        double resultadoObtido = calculadora.divide(num1, num2);
+        assertEquals(resultadoEsperado, resultadoObtido, delta);
     }
 }
